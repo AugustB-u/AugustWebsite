@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #333;
+        }
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .tab {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 0ch;
+            padding: 12px 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            transition: background 0.2s ease;
+        }
+        .tab.active,
+        .tab:hover {
+            background: #e3f2fd;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Website</h1>
+        <p>Website description.</p>
+    </div>
+    <div class="tab-container">
+        <div class="tab active" id="tab-home">Home</div>
+    </div>
+    <div class="content" id="content-area">
+        <h2>Welcome!</h2>
+        <p>Placeholder.</p>
+        <p>Placeholder.</p>
+    </div>
+    <script>
+        const tab = document.getElementById('tab-home');
+        const contentArea = document.getElementById('content-area');
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            contentArea.innerHTML = `
+                <h2>Welcome!</h2>
+                <p>Placeholder.</p>
+                <p>Placeholder.</p>
+            `;
+        });
+    </script>
+</body>
+</html>
